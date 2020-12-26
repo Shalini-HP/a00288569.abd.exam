@@ -8,6 +8,6 @@ public class EmployeeController {
 
     @GetMapping("/")
     public String index() {
-        return "Hello Employee";
+        return "Hello Employee 1";
     }
 }
