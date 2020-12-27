@@ -53,4 +53,12 @@ public class EmployeeService {
         }
     }
 
+    public void deleteEmployee(int employeeId) {
+        Optional<Employee> employee = employeeRepository.findById(employeeId);
+        if (employee.isPresent()) {
+            List<History> histories = historyRepository.findAllByEmployee(employee.get());
+            historyRepository.deleteAll(histories);
+            employeeRepository.delete(employee.get());
+        }
+    }
 }

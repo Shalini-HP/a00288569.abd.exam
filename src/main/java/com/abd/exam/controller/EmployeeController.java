@@ -31,6 +31,13 @@ public class EmployeeController {
         return "employee";
     }
 
+    // Delete Employee
+    @GetMapping("/employee-delete/{id}")
+    public String deleteEmployee(@PathVariable("id") int id, Model model) {
+        employeeService.deleteEmployee(id);
+        return "redirect:/employee";
+    }
+
     // Add Employee
     @GetMapping("/employee-add")
     public String createEmployee(Model model) {
