@@ -4,7 +4,7 @@
 <div layout:fragment="content" >
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Add Employee</h1>
-        <a href="/exam" class="btn btn-sm btn-dark ">Back</a>
+        <a th:href="@{/}" class="btn btn-sm btn-dark ">Back</a>
     </div>
     <form th:action="@{/employee-add}" th:object="${employee}" method="post">
         <div class="form-group">

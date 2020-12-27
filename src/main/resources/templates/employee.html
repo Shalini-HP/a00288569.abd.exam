@@ -5,10 +5,10 @@
 <div layout:fragment="content"  xmlns:th="http://www.thymeleaf.org" th:switch="${histories}">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Employee</h1>
-        <a href="/employee-add" class="btn btn-md btn-primary ">Add</a>
-        <a href="/log" class="btn btn-md btn-success ">Log</a>
-        <a href="/history" class="btn btn-md btn-success ">History</a>
-        <a href="/exam" class="btn btn-sm btn-dark ">Back</a>
+        <a th:href="@{/employee-add}" class="btn btn-md btn-primary ">Add</a>
+        <a th:href="@{/log}" class="btn btn-md btn-success ">Log</a>
+        <a th:href="@{/history}" class="btn btn-md btn-success ">History</a>
+        <a th:href="@{/}" class="btn btn-sm btn-dark ">Back</a>
     </div>
     <h2 th:if="${employees == null or employees.isEmpty()}">No Employee Available.</h2>
     <div th:if="${employees != null and !employees.isEmpty()}">
@@ -33,8 +33,8 @@
                 <td colspan="2" th:text="${employee.getLastModifiedOn()}"></td>
                 <td colspan="2" th:text="${employee.getCreatedOn()}"></td>
                 <td colspan="2">
-                    <a th:href="@{/exam/employee-update/{id}(id=${employee.getId()})}" class="btn btn-sm btn-success">Edit</a>
-                    <a th:href="@{/exam/employee-delete/{id}(id=${employee.getId()})}" class="btn btn-sm btn-danger ml-2">Delete</a>
+                    <a th:href="@{/employee-update/{id}(id=${employee.getId()})}" class="btn btn-sm btn-success">Edit</a>
+                    <a th:href="@{/employee-delete/{id}(id=${employee.getId()})}" class="btn btn-sm btn-danger ml-2">Delete</a>
                 </td>
             </tr>
             </tbody>
