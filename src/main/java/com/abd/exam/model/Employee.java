@@ -21,7 +21,6 @@ public class Employee {
     @Valid
     public String fullName;
 
-    @NaturalId
     @Valid
     public String email;
 
